@@ -46,7 +46,7 @@ const LoginModal: React.FC<{onSuccess: any}> = ({onSuccess}) => {
         <button
           type="button"
           onClick={openModal}
-          className="rounded-md bg-black/20 px-4 py-2 text-sm font-medium text-white hover:bg-black/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75"
+          className="rounded-md bg-white bg-black/20 px-4 py-2 text-sm font-medium text-black hover:bg-white/80 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75"
         >
           Login
         </button>
@@ -90,10 +90,10 @@ const LoginModal: React.FC<{onSuccess: any}> = ({onSuccess}) => {
                             Loading...
                           </div>
                         ) : methodId ? (
-                          <form className="space-y-4 mx-4 my-6 flex flex-col">
-                            <div className="mt-2">
+                          <form className="space-y-4 my-6 flex flex-col">
+                            <div>
                             <input
-                              className="py-2 text-black text-base focus:ring-0 focus-visible:ring-0"
+                              className="text-black text-base focus:ring-0 focus-visible:ring-0"
                               placeholder="000000"
                               onChange={(e)  => {
                                 setCode(e.target.value)
@@ -103,8 +103,9 @@ const LoginModal: React.FC<{onSuccess: any}> = ({onSuccess}) => {
                             </div>
                           </form>
                         ) : <form>
-                          <div className="mt-2">
+                          <div className="mt-4">
                             <input 
+                              className="focus:ring-0 focus-visible:ring-0 text-base text-black"
                               value={email}
                               onChange={(e) => {
                                 e.preventDefault()
@@ -117,7 +118,7 @@ const LoginModal: React.FC<{onSuccess: any}> = ({onSuccess}) => {
                           <div className="mt-4">
                             <button
                               type="button"
-                              className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                              className="inline-flex justify-center rounded-md border border-transparent bg-purple-100 px-4 py-2 text-sm font-medium text-purple-900 hover:bg-purple-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                               onClick={async (e) => {
                                 console.log('onsubmit!!')
                                 const res = await stytchClient.otps.email.loginOrCreate(email, {

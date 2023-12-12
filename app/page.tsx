@@ -40,12 +40,14 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       {user ? (
-        <div>
-          <div className='text-white'>
-            Account address: {accountAddress}
+        <div className="gap-y-2 p-6 bg-white rounded-2xl justify-center">
+          
+          <div className="h-[7.25rem] w-[7.25rem] rounded-full bg-gray-100 my-2"></div>
+          <div className="text-black mb-6 max-w-xl text-base">
+            {accountAddress}
           </div>
           <button 
-            className='text-black bg-white rounded-2xl px-4 py-2'
+            className="text-base rounded-md bg-red-100 px-4 py-2 text-base font-medium text-red-900 hover:bg-red-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75"
             onClick={(e) => { 
               e.preventDefault()
               logout()
